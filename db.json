@@ -1,0 +1,46 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Apple",
+            "type" : "Fruit",
+            "quantity": 5,
+            "price": 0.85
+        },
+        {
+            "id": 2,
+            "title": "Orange",
+            "type" : "Fruit",
+            "quantity": 23,
+            "price": 0.90
+        },
+        {
+            "id": 3,
+            "title": "Spoon",
+            "type" : "Tableware",
+            "quantity": 67,
+            "price": 4.50
+        },
+        {
+            "id": 4,
+            "title": "Carrot",
+            "type" : "Vegetable",
+            "quantity": 10,
+            "price": 0.70
+        },
+        {
+            "id": 5,
+            "title": "Fork",
+            "type" : "Tableware",
+            "quantity": 3,
+            "price": 7.00
+        },
+        {
+            "id": 6,
+            "title": "Potato",
+            "type" : "vegetable",
+            "quantity": 89,
+            "price": 0.50
+        }
+    ]
+}
