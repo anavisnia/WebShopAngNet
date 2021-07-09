@@ -6,6 +6,7 @@ export interface Product {
     price: number,
     quantity: number,
     type: string,
+    shopName?: string,
     shop?: Shop,
     shopId?: number
 }

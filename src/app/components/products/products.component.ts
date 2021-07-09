@@ -16,4 +16,12 @@ export class ProductsComponent implements OnInit {
     this.productService.getProducts().subscribe((products) => this.products = products);
   }
 
+  deleteProduct(product:Product) {
+    this.productService.deleteProduct(product).subscribe(() => this.products = this.products.filter(p => p.id !== product.id));
+  }
+  
+  addProduct(product: Product) {
+    this.productService.addProduct(product).subscribe((product) => this.products.push(product));
+  }
+
 }

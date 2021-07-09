@@ -1,0 +1,20 @@
+<form *ngIf="showAddProduct" class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+        <label for="type">Type</label>
+        <input type="text" name="type" [(ngModel)]="type" id="type" placeholder="Add Product Type">
+    </div>
+    <div class="form-control">
+        <label for="name">Name</label>
+        <input type="text" name="text" [(ngModel)]="name" id="name" placeholder="Add Product Name">
+    </div>
+    <div class="form-control">
+        <label for="price">Price</label>
+        <input type="text" name="price" [(ngModel)]="price" id="price" placeholder="Add Product Price">
+    </div>
+    
+    <div class="form-control">
+        <label for="quantity">Quantity</label>
+        <input type="text" name="quantity" [(ngModel)]="quantity" id="quantity" placeholder="Add Product Quantity">
+    </div>
+    <input type="submit" value="Save Product" class="btn btn-block">
+</form>
