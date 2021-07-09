@@ -3,4 +3,8 @@
     <p>Type: {{ product.type }}</p>
     <p>Quantity: {{ product.quantity }}</p>
     <p>Price: {{ product.price }} Eur</p>
+    <p>Shop: {{ product.shopId }}</p>
+    <!-- <p *NgFor="let shop of shops" [shop]="shop" *ng-if="product.shopId == shop.id">Shop: {{ shop.name }}</p> -->
+    <!-- <p *ng-if="product.shopId == shop.id">Shop: {{ shop.name }}</p> -->
+    <!-- <app-shops *NGFor="let shop of shops" [shop]="shop"></app-shops> -->
 </div>
