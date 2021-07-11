@@ -26,7 +26,7 @@ export class AddProductComponent implements OnInit {
   }
 
   onSubmit() {
-    if(!this.name || !this.price || !this.quantity || !this.type) {
+    if(!this.name || !this.price || !this.quantity || !this.type || !this.shopName) {
       alert('Please add a product!');
       return;
     }
@@ -36,6 +36,7 @@ export class AddProductComponent implements OnInit {
       price: this.price,
       quantity: this.quantity,
       type: this.type,
+      shopName: this.shopName
     }
 
     this.onAddProduct.emit(newProduct);
@@ -43,7 +44,8 @@ export class AddProductComponent implements OnInit {
     this.name = '';
     this.price = 0.00;
     this.quantity = 0;
-    this.type = ''
+    this.type = '',
+    this.shopName = ''
   }
 
 }

@@ -1,16 +1,12 @@
 .product {
-  display: inline-block;
-  width: 200px;
-  border: 1px solid black;
   margin: 5px;
 }
 
 .product h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  text-align: center;
 }
 
-.product * {
-  padding: 0px 5px;
+.product button {
+  width: 50%;
+  margin: auto;
 }

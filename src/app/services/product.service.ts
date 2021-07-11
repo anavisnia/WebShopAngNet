@@ -23,11 +23,18 @@ export class ProductService {
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.apiUrl);
   }
-
+  //id should be indicated in the DTO
   deleteProduct(product:Product): Observable<Product> {
     const url = `${this.apiUrl}/${product.id}`;
     return this.http.delete<Product>(url);
   }
+  // how to pass an object?
+  // deleteProduct(product:Product): Observable<Product> {
+  //   const url = `${this.apiUrl}/${product}`;
+  //   console.log(product);
+  //   console.log("deleteProduct");
+  //   return this.http.delete<Product>(url);
+  // }
 
   addProduct(product: Product) : Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product, httpOptions);

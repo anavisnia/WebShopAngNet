@@ -1,2 +1,8 @@
-<h3>Shops:</h3>
-<p *ngFor="let shop of shops">{{ shop.name }}</p>
+<div class="shop card">
+    <h3 class="card-header">Shops:</h3>
+    <ul class="list-group list-group-flush">
+        <li *ngFor="let shop of shops" class="list-group-item">
+            {{ shop.name }}
+        </li>
+    </ul>
+</div>

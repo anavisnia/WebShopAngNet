@@ -1,20 +1,28 @@
 <form *ngIf="showAddProduct" class="add-form" (ngSubmit)="onSubmit()">
-    <div class="form-control">
-        <label for="type">Type</label>
-        <input type="text" name="type" [(ngModel)]="type" id="type" placeholder="Add Product Type">
+    <div class="form-group">
+        <label for="type">Type:</label>
+        <input class="form-control" type="text" name="type" [(ngModel)]="type" id="type" placeholder="Enter Product Type">
     </div>
-    <div class="form-control">
-        <label for="name">Name</label>
-        <input type="text" name="text" [(ngModel)]="name" id="name" placeholder="Add Product Name">
+
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" name="text" [(ngModel)]="name" id="name" placeholder="Enter Product Name">
     </div>
-    <div class="form-control">
-        <label for="price">Price</label>
-        <input type="text" name="price" [(ngModel)]="price" id="price" placeholder="Add Product Price">
+
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input class="form-control" type="text" name="price" [(ngModel)]="price" id="price" placeholder="Enter Product Price">
     </div>
     
-    <div class="form-control">
-        <label for="quantity">Quantity</label>
-        <input type="text" name="quantity" [(ngModel)]="quantity" id="quantity" placeholder="Add Product Quantity">
+    <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input class="form-control" type="text" name="quantity" [(ngModel)]="quantity" id="quantity" placeholder="Enter Product Quantity">
     </div>
-    <input type="submit" value="Save Product" class="btn btn-block">
+
+    <div class="form-group">
+        <label for="quantity">Shop:</label>
+        <input class="form-control" type="text" name="shopName" [(ngModel)]="shopName" id="shopName" placeholder="Enter Product's Shop">
+    </div>
+
+    <input type="submit" value="Add Product" class="btn btn-block  btn-outline-primary">
 </form>
