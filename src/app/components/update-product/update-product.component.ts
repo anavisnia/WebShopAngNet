@@ -4,22 +4,22 @@ import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.css']
+  selector: 'app-update-product',
+  templateUrl: './update-product.component.html',
+  styleUrls: ['./update-product.component.css']
 })
-export class AddProductComponent implements OnInit {
-  @Output() onAddProduct: EventEmitter<Product> = new EventEmitter;
+export class UpdateProductComponent implements OnInit {
+  @Output() onUpdateProduct: EventEmitter<Product> = new EventEmitter;
   name?: string;
   price?: number;
   quantity?: number;
-  showAddProduct?: boolean;
+  showUpdateProduct?: boolean;
   type?: string;
   shopName?: string;
   subscription?: Subscription;
 
   constructor(private uiService: UiService) { 
-    this.subscription = this.uiService.onToggle().subscribe(value => this.showAddProduct = value);
+    this.subscription = this.uiService.onToggle().subscribe(value => this.showUpdateProduct = value);
   }
 
   ngOnInit(): void {
@@ -27,11 +27,11 @@ export class AddProductComponent implements OnInit {
 
   onSubmit() {
     if(!this.name || !this.price || !this.quantity || !this.type || !this.shopName) {
-      alert('Please add a product!');
+      alert('Please enter the information!');
       return;
     }
 
-    const newProduct = {
+    const updateProduct = {
       name: this.name,
       price: this.price,
       quantity: this.quantity,
@@ -39,7 +39,7 @@ export class AddProductComponent implements OnInit {
       shopName: this.shopName
     }
 
-    this.onAddProduct.emit(newProduct);
+    this.onUpdateProduct.emit(updateProduct);
 
     this.name = '';
     this.price = 0.00;

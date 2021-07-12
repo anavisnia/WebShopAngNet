@@ -7,5 +7,8 @@
         <li class="list-group-item">Shop: {{ product.shopName }}</li>
         <!-- <li class="list-group-item">Id: {{ product.id }}</li> -->
     </ul>
+    <!-- <button type="button" class="btn btn-outline-warning" (btnClick)="toggleUpdateProduct()" >Edit</button> -->
+    <!-- <app-button type="button" class="btn btn-outline-warning" (click)="onClick()" (btnClick)="toggleUpdateProduct()" >Edit</app-button> -->
     <button type="button" class="btn btn-outline-danger" (click)="onDelete(product)">Delete</button>
 </div>
+<app-update-product></app-update-product>

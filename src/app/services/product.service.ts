@@ -39,4 +39,8 @@ export class ProductService {
   addProduct(product: Product) : Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product, httpOptions);
   }
+
+  updateProduct(product: Product) :Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, product);
+  }
 }
