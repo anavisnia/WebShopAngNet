@@ -1,9 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { Product } from 'src/app/Product';
 import { UiService } from 'src/app/services/ui.service';
-// import { Shop } from 'src/app/Shop';
-// import { ShopService } from 'src/app/services/shop.service';
+import { Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -13,16 +12,17 @@ import { UiService } from 'src/app/services/ui.service';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product!: Product;
+  subscription?: Subscription;
   @Output() onDeleteProduct: EventEmitter<Product> = new EventEmitter;
   @Output() onUpdateProduct: EventEmitter<Product> = new EventEmitter;
+  showUpdateProduct?: boolean;
 
-  // shops: Shop[] = [];
-  // constructor(private shopService: ShopService) { }
-  constructor() { 
+  constructor(private uiService: UiService) { 
+    this.subscription = this.uiService.onToggle().subscribe(value => this.showUpdateProduct = value);
   }
 
   ngOnInit(): void {
-    // this.shopService.getShops().subscribe((shops) => this.shops = shops);
+    
   }
 
   onDelete(product:Product) {
@@ -31,6 +31,10 @@ export class ProductItemComponent implements OnInit {
 
   onUpdate(product:Product) {
     this.onUpdateProduct.emit(product);
+  }
+
+  toggleUpdateProduct() {
+    this.uiService.toggleUpdateProduct();
   }
 
 }
